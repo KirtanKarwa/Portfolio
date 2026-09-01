@@ -1,32 +1,25 @@
-# 🚀 3D Developer Portfolio Website (React + TypeScript + Three.js)
-
-[![3D portfolio preview (click to watch video)](./Screenshot_2026-04-08_22-10-00.png)](./video.mp4)
+# 🚀 Kirtan Karwa - 3D Developer Portfolio Website
 
 A modern, high-performance **3D developer portfolio website** built with **React**, **TypeScript**, **Three.js**, **GSAP**, and **WebGL**.
-
-If you’re a developer looking for a **portfolio template** that feels premium, interactive, and memorable—this repo is for you.
-
-> Live preview: https://www.redoyanulhaque.me/
 
 ---
 
 ## ✨ Highlights
 
-- **3D / WebGL experience** powered by **Three.js**
-- Smooth animations with **GSAP**
-- Modern **React + TypeScript** codebase
-- Fast, responsive UI (desktop + mobile)
-- Designed for developers, engineers, programmers, and creators
+- **3D / WebGL experience** powered by **Three.js** & **React Three Fiber**
+- Smooth scroll & text animations with **GSAP** & **Lenis**
+- Modern **React 18 + TypeScript** codebase
+- Fast, fully responsive UI (desktop + mobile)
 
 ---
 
 ## 🧰 Tech Stack
 
-- **React**
+- **React 18**
 - **TypeScript**
-- **Three.js / WebGL**
+- **Three.js / WebGL / React Three Fiber**
 - **GSAP**
-- **HTML / CSS / JavaScript**
+- **Vite**
 
 ---
 
@@ -35,23 +28,23 @@ If you’re a developer looking for a **portfolio template** that feels premium,
 ### 1) Clone
 
 ```bash
-git clone https://github.com/red1-for-hek/portfolio-website.git
-cd portfolio-website
+git clone https://github.com/KirtanKarwa/portfolio.git
+cd portfolio
 ```
 
-### 2) Install
+### 2) Install Dependencies
 
 ```bash
 npm install
 ```
 
-### 3) Run locally
+### 3) Run Locally
 
 ```bash
 npm run dev
 ```
 
-### 4) Build
+### 4) Build for Production
 
 ```bash
 npm run build
@@ -59,41 +52,4 @@ npm run build
 
 ---
 
-## 🧩 Customize (Quick Guide)
-
-Typical things you’ll want to update:
-
-- **Your name + hero section text**
-- **Projects list**
-- **Social links** (GitHub, LinkedIn, email)
-- **SEO meta title/description**
-
----
-
-## ⭐ Support
-
-If you found this useful:
-
-- Please **star** the repository (it helps a lot)
-- Share it with a friend who needs a portfolio template
-- Sponsor via the **Sponsor** button on GitHub (if available in your region)
-
----
-
-## 🤝 Connect
-
-- LinkedIn: https://www.linkedin.com/in/red1-for-hek/
-
----
-
-## 🏷️ Recommended GitHub Topics (add in repo settings)
-
-Add these topics to improve GitHub search visibility:
-
-`portfolio` `developer-portfolio` `portfolio-website` `portfolio-template` `3d-portfolio` `react` `typescript` `threejs` `webgl` `gsap` `frontend` `vite`
-
----
-
-## 🪪 License
-
-This project is open source and available under the **MIT License**. See [LICENSE](LICENSE).
+© 2026 Kirtan Karwa. All rights reserved.
