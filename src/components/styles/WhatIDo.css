@@ -20,27 +20,27 @@
   z-index: 9;
 }
 
-.what-box h2.title {
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: flex-start !important;
-  font-size: calc(2.6vw + 16px) !important;
-  line-height: 1.15 !important;
+.what-title {
+  font-size: calc(3vw + 16px);
+  line-height: 1.1;
   font-weight: 700;
   margin-right: 20px;
   margin-bottom: 60px;
   position: relative;
-  z-index: 50 !important;
+  z-index: 50;
 }
 
-.what-line-1 {
-  display: block !important;
+.what-title-top {
+  display: block;
   white-space: nowrap;
+  letter-spacing: 2px;
 }
 
-.what-line-2 {
-  display: block !important;
-  margin-top: 4px;
+.what-title-bottom {
+  display: block;
+  color: var(--accentColor);
+  white-space: nowrap;
+  letter-spacing: 2px;
 }
 
 .hat-h2 {
