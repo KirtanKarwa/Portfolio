@@ -16,16 +16,25 @@ import { setProgress } from "../Loading";
 const Scene = () => {
   const canvasDiv = useRef<HTMLDivElement | null>(null);
   const hoverDivRef = useRef<HTMLDivElement>(null);
-  const sceneRef = useRef(new THREE.Scene());
+  const sceneRef = useRef<THREE.Scene | null>(null);
   const { setLoading } = useLoading();
 
-  const [character, setChar] = useState<THREE.Object3D | null>(null);
+  const [, setChar] = useState<THREE.Object3D | null>(null);
+
   useEffect(() => {
     if (canvasDiv.current) {
+      // Clear any pre-existing canvas or scene elements to prevent duplicate character models
+      const existingCanvas = canvasDiv.current.querySelector("canvas");
+      if (existingCanvas) {
+        canvasDiv.current.removeChild(existingCanvas);
+      }
+
+      const scene = new THREE.Scene();
+      sceneRef.current = scene;
+
       let rect = canvasDiv.current.getBoundingClientRect();
       let container = { width: rect.width, height: rect.height };
       const aspect = container.width / container.height;
-      const scene = sceneRef.current;
 
       const renderer = new THREE.WebGLRenderer({
         alpha: true,
@@ -47,6 +56,7 @@ const Scene = () => {
       let headBone: THREE.Object3D | null = null;
       let screenLight: any | null = null;
       let mixer: THREE.AnimationMixer;
+      let animFrameId: number;
 
       const clock = new THREE.Clock();
 
@@ -99,16 +109,14 @@ const Scene = () => {
         });
       };
 
-      document.addEventListener("mousemove", (event) => {
-        onMouseMove(event);
-      });
+      document.addEventListener("mousemove", onMouseMove);
       const landingDiv = document.getElementById("landingDiv");
       if (landingDiv) {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
       const animate = () => {
-        requestAnimationFrame(animate);
+        animFrameId = requestAnimationFrame(animate);
         if (headBone) {
           handleHeadRotation(
             headBone,
@@ -127,14 +135,13 @@ const Scene = () => {
         renderer.render(scene, camera);
       };
       animate();
+
       return () => {
+        cancelAnimationFrame(animFrameId);
         clearTimeout(debounce);
         scene.clear();
         renderer.dispose();
-        window.removeEventListener("resize", () =>
-          handleResize(renderer, camera, canvasDiv, character!)
-        );
-        if (canvasDiv.current) {
+        if (canvasDiv.current && renderer.domElement && canvasDiv.current.contains(renderer.domElement)) {
           canvasDiv.current.removeChild(renderer.domElement);
         }
         if (landingDiv) {
