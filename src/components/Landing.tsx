@@ -50,17 +50,6 @@ const Landing = ({ children }: PropsWithChildren) => {
                 {professions[currentIndex]}
               </div>
             </h2>
-            <div className="profession-pills">
-              {professions.map((prof, index) => (
-                <span
-                  key={index}
-                  className={`prof-pill ${index === currentIndex ? 'active' : ''}`}
-                  onClick={() => setCurrentIndex(index)}
-                >
-                  {prof}
-                </span>
-              ))}
-            </div>
           </div>
           {/* Mobile photo - shows on mobile when 3D character is hidden */}
           <div className="mobile-photo">
