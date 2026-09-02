@@ -50,16 +50,20 @@ const Scene = () => {
 
       const clock = new THREE.Clock();
 
-      const light = setLighting(scene);
-      let progress = setProgress((value) => setLoading(value));
+      let isMounted = true;
       const { loadCharacter } = setCharacter(renderer, scene, camera);
 
       loadCharacter().then((gltf) => {
-        if (gltf) {
+        if (gltf && isMounted) {
+          const existingChar = scene.getObjectByName("character_model");
+          if (existingChar) {
+            scene.remove(existingChar);
+          }
           const animations = setAnimations(gltf);
           hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
           mixer = animations.mixer;
           let character = gltf.scene;
+          character.name = "character_model";
           setChar(character);
           scene.add(character);
           headBone = character.getObjectByName("spine006") || null;
@@ -128,6 +132,7 @@ const Scene = () => {
       };
       animate();
       return () => {
+        isMounted = false;
         clearTimeout(debounce);
         scene.clear();
         renderer.dispose();
