@@ -105,39 +105,34 @@ export const config = {
     },
     skills: [
         {
-            id: "software_automation",
-            title: "SOFTWARE & AUTOMATION",
-            subtitle: "Workflow automation, C#, Python & system scripting",
-            details: "Engineering automation tools, workflow scripts, and desktop software to turn complex manual processes into simple, scalable background solutions.",
-            tools: ["C#", ".NET", "Python", "Automation Scripts", "System Architecture", "REST APIs", "Process Automation"]
+            title: "FULL STACK",
+            description: "Modern web development & scalable backend solutions",
+            details: "Building responsive, fast, and accessible web applications with React, TypeScript, Node.js, and databases. Crafting seamless user experiences with modern UI principles.",
+            tools: ["React", "TypeScript", "Node.js", "Express", "Next.js", "MongoDB", "PostgreSQL", "TailwindCSS", "REST APIs", "Git"]
         },
         {
-            id: "full_stack",
-            title: "FULL STACK DEV",
-            subtitle: "Modern web development & scalable backend solutions",
-            details: "Building responsive, fast, and accessible web applications with React, TypeScript, Node.js, Express, and modern databases.",
-            tools: ["React", "TypeScript", "Node.js", "Express", "Next.js", "MongoDB", "PostgreSQL", "TailwindCSS", "Git"]
-        },
-        {
-            id: "three_frontend",
             title: "3D & FRONTEND",
-            subtitle: "Interactive 3D graphics & smooth web UI animations",
+            description: "Interactive 3D graphics & smooth web UI animations",
             details: "Specializing in WebGL canvas experiences, Three.js 3D model rendering, GSAP timeline animations, and glassmorphism design systems.",
             tools: ["Three.js", "React Three Fiber", "GSAP", "WebGL", "Lenis Scroll", "HTML5", "CSS3", "Figma", "Responsive Design"]
         },
         {
-            id: "ai_systems",
-            title: "AI DEVELOPER",
-            subtitle: "AI integration, natural language processing & LLMs",
-            details: "Integrating AI models, natural language processing pipelines, intelligent chatbots, and automated decision-making engines.",
-            tools: ["AI Integration", "Python", "OpenAI API", "NLP", "FastAPI", "Prompt Engineering"]
+            title: "SOFTWARE & AUTOMATION",
+            description: "Workflow automation, desktop software & system scripting",
+            details: "Engineered solutions in C#, Python, and .NET. Eliminating repetitive tasks, automating workflows, and building robust backend & desktop tools.",
+            tools: ["C#", ".NET", "Python", "Automation", "PyAutoGUI", "Scripting", "System Tools", "CI/CD"]
         },
         {
-            id: "data_sql",
+            title: "AI & INTELLIGENT SYSTEMS",
+            description: "Smart AI agents, chatbots, and NLP models",
+            details: "Building intelligent conversational agents, prompt engineering, integrating LLM APIs, and machine learning models into web applications.",
+            tools: ["AI Agents", "Python", "OpenAI API", "NLP", "LLMs", "FastAPI", "TensorFlow", "PyTorch"]
+        },
+        {
             title: "DATA & SQL",
-            subtitle: "Database design, SQL queries & data processing",
-            details: "Designing relational database schemas, writing optimized SQL queries, and building data processing pipelines for reliability and speed.",
-            tools: ["SQL", "PostgreSQL", "MySQL", "Data Modeling", "ETL Pipelines", "Database Security"]
+            description: "Database design, SQL queries & data engineering",
+            details: "Architecting relational & NoSQL databases, optimizing complex SQL queries, managing data pipelines, and structuring application state.",
+            tools: ["SQL", "PostgreSQL", "MySQL", "MongoDB", "Database Architecture", "Data Modeling", "ORM"]
         }
     ]
 };
