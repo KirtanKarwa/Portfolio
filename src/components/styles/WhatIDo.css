@@ -20,14 +20,27 @@
   z-index: 9;
 }
 
-.what-box h2 {
-  font-size: calc(3.2vw + 18px);
-  line-height: 1.15;
-  font-weight: 600;
-  margin-right: 5%;
+.what-box h2.title {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  font-size: calc(2.6vw + 16px) !important;
+  line-height: 1.15 !important;
+  font-weight: 700;
+  margin-right: 20px;
   margin-bottom: 60px;
   position: relative;
-  z-index: 15;
+  z-index: 50 !important;
+}
+
+.what-line-1 {
+  display: block !important;
+  white-space: nowrap;
+}
+
+.what-line-2 {
+  display: block !important;
+  margin-top: 4px;
 }
 
 .hat-h2 {
