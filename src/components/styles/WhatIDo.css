@@ -53,55 +53,56 @@
 
 .what-box-in {
   flex-direction: column;
-  height: 500px;
-  margin-left: 200px;
+  height: 600px;
+  margin-left: 150px;
   position: relative;
   display: flex;
 }
 
 .what-content {
-  width: 450px;
-  height: 33%;
-  min-height: 50%;
+  width: 480px;
+  height: 40%;
+  min-height: 40%;
   transition: 0.5s;
-  /* border: 0.5px dashed rgba(255, 255, 255, 0.3); */
   position: relative;
-  padding: 50px;
+  padding: 26px 36px;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 .what-noTouch:hover,
 .what-content-active {
-  min-height: 67%;
-  padding: 40px 50px;
+  min-height: 60%;
+  padding: 24px 36px;
 }
 
 .what-noTouch:hover~.what-content,
 .what-box-in:hover .what-noTouch:not(:hover),
 .what-content.what-sibling {
-  min-height: 33%;
-  padding: 10px 50px;
+  min-height: 40%;
+  padding: 16px 36px;
 }
 
 .what-content h3 {
-  font-size: 35px;
+  font-size: 26px;
   letter-spacing: 1px;
-  margin: 0;
+  margin: 0 0 2px 0;
 }
 
 .what-content p {
-  font-size: 14px;
+  font-size: 13.5px;
   line-height: 18px;
-  font-weight: 200;
-  letter-spacing: 0.7px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  margin: 6px 0;
 }
 
 .what-content h4 {
   font-weight: 300;
   letter-spacing: 1px;
   margin: 0px;
-  font-size: 14px;
-  opacity: 0.3;
+  font-size: 13px;
+  opacity: 0.4;
 }
 
 .what-content-in {
