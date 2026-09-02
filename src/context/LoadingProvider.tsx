@@ -17,7 +17,7 @@ export const LoadingContext = createContext<LoadingType | null>(null);
 
 export const LoadingProvider = ({ children }: PropsWithChildren) => {
   const [isLoading, setIsLoading] = useState(() => {
-    // Skip loading on mobile
+    // Skip loading on mobile devices
     if (window.innerWidth <= 768) return false;
     return true;
   });
@@ -28,8 +28,9 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
     setIsLoading,
     setLoading,
   };
+
   useEffect(() => {
-    // Auto-start animations on mobile since there's no 3D model
+    // Auto-start animations on mobile since there's no 3D model loading delay
     if (window.innerWidth <= 768) {
       import("../components/utils/initialFX").then((module) => {
         if (module.initialFX) {
@@ -38,10 +39,22 @@ export const LoadingProvider = ({ children }: PropsWithChildren) => {
           }, 100);
         }
       });
+      return;
     }
-  }, []);
 
-  useEffect(() => {}, [loading]);
+    // Smooth fast progress simulation for desktop load
+    let current = 0;
+    const interval = setInterval(() => {
+      current += Math.floor(Math.random() * 15) + 10;
+      if (current >= 100) {
+        current = 100;
+        clearInterval(interval);
+      }
+      setLoading(current);
+    }, 60);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <LoadingContext.Provider value={value as LoadingType}>
