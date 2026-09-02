@@ -16,18 +16,17 @@ export const config = {
     },
     experiences: [
         {
-            position: "Full Stack Engineer",
-            company: "Software Development & Freelance",
-            period: "2025 - Present",
-            location: "Remote / India",
-            description: "Building scalable web applications, 3D interactive web experiences, and cloud-native solutions using modern tech stacks.",
+            position: "Software Engineering Student",
+            company: "Computer Science",
+            period: "2023 - 2024",
+            location: "India",
+            description: "Mastered core computer science fundamentals, data structures, algorithms, and software development methodologies.",
             responsibilities: [
-                "Architecting frontend and backend web applications using React, TypeScript, and Node.js",
-                "Building interactive 3D web interfaces with Three.js and WebGL",
-                "Designing and integrating REST APIs and database systems",
-                "Optimizing application performance, responsiveness, and SEO"
+                "Studying object-oriented programming, data structures, and algorithms",
+                "Building foundational web development projects and Python scripts",
+                "Mastering version control workflows with Git and GitHub"
             ],
-            technologies: ["React", "TypeScript", "Three.js", "Node.js", "Express", "MongoDB", "TailwindCSS"]
+            technologies: ["JavaScript", "Python", "Git", "GitHub", "Data Structures", "Algorithms"]
         },
         {
             position: "Frontend & 3D Web Developer",
@@ -44,17 +43,18 @@ export const config = {
             technologies: ["React", "GSAP", "Three.js", "WebGL", "CSS3", "JavaScript"]
         },
         {
-            position: "Software Engineering Student",
-            company: "Computer Science",
-            period: "2023 - 2024",
-            location: "India",
-            description: "Mastered core computer science fundamentals, data structures, algorithms, and software development methodologies.",
+            position: "Full Stack Engineer",
+            company: "Software Development & Freelance",
+            period: "2025 - Present",
+            location: "Remote / India",
+            description: "Building scalable web applications, 3D interactive web experiences, and cloud-native solutions using modern tech stacks.",
             responsibilities: [
-                "Studying object-oriented programming, data structures, and algorithms",
-                "Building foundational web development projects and Python scripts",
-                "Mastering version control workflows with Git and GitHub"
+                "Architecting frontend and backend web applications using React, TypeScript, and Node.js",
+                "Building interactive 3D web interfaces with Three.js and WebGL",
+                "Designing and integrating REST APIs and database systems",
+                "Optimizing application performance, responsiveness, and SEO"
             ],
-            technologies: ["JavaScript", "Python", "Git", "GitHub", "Data Structures", "Algorithms"]
+            technologies: ["React", "TypeScript", "Three.js", "Node.js", "Express", "MongoDB", "TailwindCSS"]
         }
     ],
     projects: [
