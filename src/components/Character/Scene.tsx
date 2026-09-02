@@ -50,6 +50,8 @@ const Scene = () => {
 
       const clock = new THREE.Clock();
 
+      const light = setLighting(scene);
+      let progress = setProgress((value) => setLoading(value));
       let isMounted = true;
       const { loadCharacter } = setCharacter(renderer, scene, camera);
 
