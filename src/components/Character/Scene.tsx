@@ -22,6 +22,7 @@ const Scene = () => {
   const [character, setChar] = useState<THREE.Object3D | null>(null);
 
   useEffect(() => {
+    let isMounted = true;
     if (!canvasDiv.current) return;
 
     // Clear any existing DOM canvas elements to prevent duplicate 3D models
@@ -31,7 +32,11 @@ const Scene = () => {
     let container = { width: rect.width || window.innerWidth, height: rect.height || window.innerHeight };
     const aspect = container.width / container.height;
     const scene = sceneRef.current;
-    scene.clear();
+    
+    // Purge old scene children
+    while (scene.children.length > 0) {
+      scene.remove(scene.children[0]);
+    }
 
     const renderer = new THREE.WebGLRenderer({
       alpha: true,
@@ -60,25 +65,34 @@ const Scene = () => {
     const { loadCharacter } = setCharacter(renderer, scene, camera);
 
     loadCharacter().then((gltf) => {
-      if (gltf) {
-        const animations = setAnimations(gltf);
-        hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
-        mixer = animations.mixer;
-        let characterObj = gltf.scene;
-        setChar(characterObj);
-        scene.add(characterObj);
-        headBone = characterObj.getObjectByName("spine006") || null;
-        screenLight = characterObj.getObjectByName("screenlight") || null;
-        progress.loaded().then(() => {
-          setTimeout(() => {
-            light.turnOnLights();
-            animations.startIntro();
-          }, 2500);
-        });
-        window.addEventListener("resize", () =>
-          handleResize(renderer, camera, canvasDiv, characterObj)
-        );
+      if (!isMounted || !gltf) return;
+
+      // Purge any stale objects in scene before adding new character
+      while (scene.children.length > 0) {
+        scene.remove(scene.children[0]);
       }
+
+      const animations = setAnimations(gltf);
+      hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
+      mixer = animations.mixer;
+      let characterObj = gltf.scene;
+      setChar(characterObj);
+      scene.add(characterObj);
+      headBone = characterObj.getObjectByName("spine006") || null;
+      screenLight = characterObj.getObjectByName("screenlight") || null;
+
+      progress.loaded().then(() => {
+        if (!isMounted) return;
+        setTimeout(() => {
+          if (!isMounted) return;
+          light.turnOnLights();
+          animations.startIntro();
+        }, 2500);
+      });
+
+      window.addEventListener("resize", () =>
+        handleResize(renderer, camera, canvasDiv, characterObj)
+      );
     });
 
     let mouse = { x: 0, y: 0 },
@@ -112,6 +126,7 @@ const Scene = () => {
     }
 
     const animate = () => {
+      if (!isMounted) return;
       animationFrameId = requestAnimationFrame(animate);
       if (headBone) {
         handleHeadRotation(
@@ -133,12 +148,16 @@ const Scene = () => {
     animate();
 
     return () => {
+      isMounted = false;
       clearTimeout(debounce);
       cancelAnimationFrame(animationFrameId);
       document.removeEventListener("mousemove", onMouseMove);
       if (landingDiv) {
         landingDiv.removeEventListener("touchstart", onTouchStart);
         landingDiv.removeEventListener("touchend", onTouchEnd);
+      }
+      while (scene.children.length > 0) {
+        scene.remove(scene.children[0]);
       }
       scene.clear();
       renderer.dispose();
