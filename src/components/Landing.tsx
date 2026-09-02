@@ -35,7 +35,7 @@ const Landing = ({ children }: PropsWithChildren) => {
               src="/images/mypicnbg.png"
               alt={config.developer.fullName}
               loading="eager"
-              fetchpriority="high"
+              fetchPriority="high"
               decoding="async"
             />
           </div>
