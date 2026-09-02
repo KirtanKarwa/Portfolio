@@ -7,7 +7,7 @@ export const config = {
     },
     social: {
         github: "KirtanKarwa",
-        email: "kirtankarwa2y@gmail.com",
+        email: "karwakirtan@gmail.com",
         location: "India"
     },
     about: {
@@ -96,7 +96,7 @@ export const config = {
         }
     ],
     contact: {
-        email: "kirtankarwa2y@gmail.com",
+        email: "karwakirtan@gmail.com",
         github: "https://github.com/KirtanKarwa",
         linkedin: "https://linkedin.com/in/kirtankarwa",
         twitter: "https://x.com/kirtankarwa",
