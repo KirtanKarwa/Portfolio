@@ -19,9 +19,17 @@ const Scene = () => {
   const sceneRef = useRef(new THREE.Scene());
   const { setLoading } = useLoading();
 
-  const [character, setChar] = useState<THREE.Object3D | null>(null);
+  const [, setChar] = useState<THREE.Object3D | null>(null);
+
   useEffect(() => {
+    let isMounted = true;
+    let animationFrameId: number;
+
     if (canvasDiv.current) {
+      // Clear any existing canvas DOM elements to prevent duplicate 3D character models
+      const existingCanvases = canvasDiv.current.querySelectorAll("canvas");
+      existingCanvases.forEach((c) => c.remove());
+
       let rect = canvasDiv.current.getBoundingClientRect();
       let container = { width: rect.width, height: rect.height };
       const aspect = container.width / container.height;
@@ -55,24 +63,26 @@ const Scene = () => {
       const { loadCharacter } = setCharacter(renderer, scene, camera);
 
       loadCharacter().then((gltf) => {
-        if (gltf) {
+        if (gltf && isMounted) {
           const animations = setAnimations(gltf);
           hoverDivRef.current && animations.hover(gltf, hoverDivRef.current);
           mixer = animations.mixer;
-          let character = gltf.scene;
-          setChar(character);
-          scene.add(character);
-          headBone = character.getObjectByName("spine006") || null;
-          screenLight = character.getObjectByName("screenlight") || null;
+          let characterObj = gltf.scene;
+          setChar(characterObj);
+          scene.add(characterObj);
+          headBone = characterObj.getObjectByName("spine006") || null;
+          screenLight = characterObj.getObjectByName("screenlight") || null;
           progress.loaded().then(() => {
             setTimeout(() => {
-              light.turnOnLights();
-              animations.startIntro();
+              if (isMounted) {
+                light.turnOnLights();
+                animations.startIntro();
+              }
             }, 2500);
           });
-          window.addEventListener("resize", () =>
-            handleResize(renderer, camera, canvasDiv, character)
-          );
+
+          const onResize = () => handleResize(renderer, camera, canvasDiv, characterObj);
+          window.addEventListener("resize", onResize);
         }
       });
 
@@ -99,16 +109,16 @@ const Scene = () => {
         });
       };
 
-      document.addEventListener("mousemove", (event) => {
-        onMouseMove(event);
-      });
+      document.addEventListener("mousemove", onMouseMove);
       const landingDiv = document.getElementById("landingDiv");
       if (landingDiv) {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
+
       const animate = () => {
-        requestAnimationFrame(animate);
+        if (!isMounted) return;
+        animationFrameId = requestAnimationFrame(animate);
         if (headBone) {
           handleHeadRotation(
             headBone,
@@ -127,20 +137,20 @@ const Scene = () => {
         renderer.render(scene, camera);
       };
       animate();
+
       return () => {
-        clearTimeout(debounce);
+        isMounted = false;
+        if (animationFrameId) cancelAnimationFrame(animationFrameId);
+        if (debounce) clearTimeout(debounce);
         scene.clear();
         renderer.dispose();
-        window.removeEventListener("resize", () =>
-          handleResize(renderer, camera, canvasDiv, character!)
-        );
-        if (canvasDiv.current) {
-          canvasDiv.current.removeChild(renderer.domElement);
-        }
+        document.removeEventListener("mousemove", onMouseMove);
         if (landingDiv) {
-          document.removeEventListener("mousemove", onMouseMove);
           landingDiv.removeEventListener("touchstart", onTouchStart);
           landingDiv.removeEventListener("touchend", onTouchEnd);
+        }
+        if (canvasDiv.current && renderer.domElement.parentNode === canvasDiv.current) {
+          canvasDiv.current.removeChild(renderer.domElement);
         }
       };
     }
