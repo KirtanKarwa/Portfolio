@@ -256,17 +256,16 @@
 }
 
 .character-model {
-  height: 80%;
-  height: 80vh;
+  height: 75vh;
   position: absolute;
-  max-width: 1920px;
-  max-height: 1080px;
+  max-width: 1000px;
+  max-height: 900px;
   transform: translateX(-50%);
   width: 100%;
   left: 50%;
-  z-index: 0;
-  bottom: 50px;
-  pointer-events: inherit;
+  z-index: 1 !important;
+  bottom: 40px;
+  pointer-events: none !important;
 }
 
 .character-model::after {
