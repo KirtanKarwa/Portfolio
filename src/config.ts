@@ -2,8 +2,8 @@ export const config = {
     developer: {
         name: "Kirtan",
         fullName: "Kirtan Karwa",
-        title: "Full Stack & 3D Web Engineer",
-        description: "Full Stack & 3D Web Engineer building interactive digital experiences, high-performance web applications, and modern digital solutions."
+        title: "Software & Automation Engineer",
+        description: "Software & Automation Engineer working across C#, Python, React, JavaScript, .NET, SQL, and AI."
     },
     social: {
         github: "KirtanKarwa",
@@ -12,7 +12,7 @@ export const config = {
     },
     about: {
         title: "About Me",
-        description: "I am a passionate Full Stack Developer and 3D Web Engineer specializing in React, TypeScript, Three.js, Node.js, and modern web architectures. I take pride in turning complex technical challenges into smooth, interactive, and visually captivating digital products. Constantly exploring emerging web technologies, 3D graphics, and cloud systems."
+        description: "I write code, automate things, build websites, work with data, and occasionally argue with computers when they refuse to cooperate. I’m a Software & Automation Engineer working across C#, Python, React, JavaScript, .NET, SQL, and AI. I enjoy turning complicated problems into simple, scalable solutions—from engineering automation and software products to modern web applications and intelligent systems. If something is repetitive, my first instinct is usually: “Why are we doing this manually?”"
     },
     experiences: [
         {
