@@ -34,26 +34,31 @@ const Work = () => {
       scrollTrigger: {
         trigger: ".work-section",
         start: "top top",
-        end: `+=${translateX}`,
-        scrub: 1,
+        end: () => `+=${translateX}`,
+        scrub: 0.8,
         pin: true,
         pinSpacing: true,
         anticipatePin: 1,
         id: "work",
         invalidateOnRefresh: true,
+        fastScrollEnd: true,
       },
     });
 
     timeline.to(".work-flex", {
-      x: -translateX,
+      x: () => -translateX,
       ease: "none",
     });
 
     // Refresh ScrollTrigger after layout settles
-    ScrollTrigger.refresh();
+    const refreshTimer = setTimeout(() => {
+      setTranslateX();
+      ScrollTrigger.refresh();
+    }, 400);
 
     // Clean up
     return () => {
+      clearTimeout(refreshTimer);
       timeline.kill();
       ScrollTrigger.getById("work")?.kill();
     };
