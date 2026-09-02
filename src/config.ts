@@ -20,38 +20,37 @@ export const config = {
             company: "Software Engineering Degree",
             period: "2022 - 2026",
             location: "India",
-            description: "Graduated with a degree in Software Engineering (2022 - 2026). Mastered core computer science fundamentals, data structures, object-oriented programming, and software architecture.",
+            description: "Completed Software Engineering degree (2022 - 2026). Mastered computer science fundamentals, software architecture, data structures, algorithms, and object-oriented programming.",
             responsibilities: [
-                "Studying software design patterns, data structures, and algorithm design",
-                "Building software projects using C#, Python, and SQL databases",
-                "Mastering version control workflows with Git and software lifecycle engineering"
+                "Studying software engineering principles, algorithm design, and system architecture",
+                "Building software applications in C#, Python, and SQL",
+                "Mastering version control, software lifecycles, and engineering practices"
             ],
             technologies: ["Software Engineering", "C#", "Python", "SQL", "Git", "Data Structures"]
         },
         {
-            position: "Full Stack & Web Developer",
-            company: "Web Applications & Freelance",
-            period: "2024 - 2025",
+            position: "AI, Automation & Web Developer",
+            company: "Software, AI & Automation Projects",
+            period: "2025",
             location: "India",
-            description: "Built responsive full-stack websites, interactive 3D web applications, RESTful APIs, and database solutions for modern web products.",
+            description: "Created numerous projects across automation, AI models, custom software products, and modern websites.",
             responsibilities: [
-                "Developing full-stack web applications using React, TypeScript, and Node.js",
-                "Building interactive 3D web interfaces with Three.js and WebGL",
-                "Designing and integrating REST APIs and database systems"
+                "Engineered workflow automation tools and Python/C# scripts",
+                "Developed intelligent AI models, chatbots, and smart assistant integrations",
+                "Built full-stack web applications and interactive digital products"
             ],
-            technologies: ["React", "TypeScript", "Three.js", "Node.js", "Express", "TailwindCSS"]
+            technologies: ["Automation", "AI Models", "Python", "React", "C#", "JavaScript", "SQL"]
         },
         {
             position: "Software & Automation Engineer",
-            company: "Consistent NOW — Software & AI",
-            period: "2025 - Present",
+            company: "Software & Automation Engineering",
+            period: "2026 - Present",
             location: "Remote / India",
-            description: "Consistently working as a Software & Automation Engineer. Engineering software products, automating business workflows, building modern websites, and developing intelligent AI models.",
+            description: "Working as a Software & Automation Engineer. Engineering scalable software products, building business automation systems, modern websites, and developing intelligent AI models.",
             responsibilities: [
-                "Engineering custom automation systems and desktop tools in C#, Python, and .NET",
-                "Developing and integrating AI models, smart assistants, and machine learning workflows",
-                "Building high-performance full-stack web applications and software products",
-                "Designing relational databases and optimizing complex SQL queries"
+                "Engineering custom automation solutions and desktop software using C#, Python, and .NET",
+                "Developing full-stack web applications and intelligent AI system integrations",
+                "Designing robust database architectures and optimizing complex SQL queries"
             ],
             technologies: ["C#", ".NET", "Python", "Automation", "AI Models", "React", "JavaScript", "SQL"]
         }
