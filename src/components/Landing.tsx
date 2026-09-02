@@ -1,11 +1,34 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect, useState } from "react";
 import "./styles/Landing.css";
 import { config } from "../config";
+
+const professions = [
+  "Software & Automation Engineer",
+  "Full-Stack Web Developer",
+  "AI & Intelligent Systems Developer",
+  "C#, Python & .NET Specialist",
+  "SQL & Data Engineer"
+];
 
 const Landing = ({ children }: PropsWithChildren) => {
   const nameParts = config.developer.fullName.split(" ");
   const firstName = nameParts[0] || config.developer.name;
   const lastName = nameParts.slice(1).join(" ") || "";
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fadeState, setFadeState] = useState("fade-in");
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFadeState("fade-out");
+      setTimeout(() => {
+        setCurrentIndex((prev) => (prev + 1) % professions.length);
+        setFadeState("fade-in");
+      }, 350);
+    }, 2600);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <>
@@ -23,11 +46,21 @@ const Landing = ({ children }: PropsWithChildren) => {
           <div className="landing-info">
             <h3>A</h3>
             <h2 className="landing-info-h2">
-              <div className="landing-h2-1">Software & Automation</div>
+              <div className={`profession-text ${fadeState}`}>
+                {professions[currentIndex]}
+              </div>
             </h2>
-            <h2>
-              <div className="landing-h2-info">Engineer & Developer</div>
-            </h2>
+            <div className="profession-pills">
+              {professions.map((prof, index) => (
+                <span
+                  key={index}
+                  className={`prof-pill ${index === currentIndex ? 'active' : ''}`}
+                  onClick={() => setCurrentIndex(index)}
+                >
+                  {prof}
+                </span>
+              ))}
+            </div>
           </div>
           {/* Mobile photo - shows on mobile when 3D character is hidden */}
           <div className="mobile-photo">
