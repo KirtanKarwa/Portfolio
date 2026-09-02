@@ -51,81 +51,119 @@
   color: var(--accentColor);
 }
 
-.what-box-in {
-  flex-direction: column;
-  height: 600px;
-  margin-left: 150px;
-  position: relative;
+.what-accordion-container {
   display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 480px;
+  max-width: 90vw;
+  margin-left: 100px;
+  position: relative;
+  z-index: 20;
 }
 
-.what-content {
-  width: 480px;
-  height: 40%;
-  min-height: 40%;
-  transition: 0.5s;
-  position: relative;
-  padding: 26px 36px;
-  box-sizing: border-box;
+.what-accordion-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px dashed rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 16px 20px;
+  cursor: pointer;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   overflow: hidden;
 }
 
-.what-noTouch:hover,
-.what-content-active {
-  min-height: 60%;
-  padding: 24px 36px;
+.what-accordion-item:hover,
+.what-accordion-item.active {
+  background: rgba(196, 129, 255, 0.08);
+  border-color: rgba(196, 129, 255, 0.5);
+  box-shadow: 0 8px 30px rgba(196, 129, 255, 0.15);
 }
 
-.what-noTouch:hover~.what-content,
-.what-box-in:hover .what-noTouch:not(:hover),
-.what-content.what-sibling {
-  min-height: 40%;
-  padding: 16px 36px;
+.what-accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.what-content h3 {
-  font-size: 26px;
-  letter-spacing: 1px;
-  margin: 0 0 2px 0;
+.what-accordion-header h3 {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin: 0;
+  color: #ffffff;
+  transition: color 0.3s ease;
 }
 
-.what-content p {
-  font-size: 13.5px;
-  line-height: 18px;
-  font-weight: 300;
-  letter-spacing: 0.5px;
-  margin: 6px 0;
+.what-accordion-item:hover .what-accordion-header h3,
+.what-accordion-item.active .what-accordion-header h3 {
+  color: #e9d5ff;
 }
 
-.what-content h4 {
-  font-weight: 300;
-  letter-spacing: 1px;
-  margin: 0px;
-  font-size: 13px;
-  opacity: 0.4;
+.what-arrow-icon {
+  font-size: 24px;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.35s ease, color 0.35s ease;
 }
 
-.what-content-in {
+.what-arrow-icon.open {
+  transform: rotate(180deg);
+  color: #c481ff;
+}
+
+.what-accordion-body {
+  max-height: 0;
   opacity: 0;
-  animation: whatFlicker 0.5s 1 forwards;
-  animation-delay: 1s;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.35s ease, margin-top 0.35s ease;
 }
 
-@keyframes whatFlicker {
+.what-accordion-item.active .what-accordion-body {
+  max-height: 280px;
+  opacity: 1;
+  margin-top: 14px;
+}
 
-  0%,
-  25%,
-  35%,
-  60% {
-    opacity: 0;
-  }
+.what-accordion-body h4 {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.8px;
+  color: var(--accentColor);
+  margin: 0 0 8px 0;
+  opacity: 0.9;
+}
 
-  30%,
-  50%,
-  40%,
-  100% {
-    opacity: 1;
-  }
+.what-accordion-body p {
+  font-size: 13px;
+  line-height: 19px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0 0 12px 0;
+}
+
+.what-accordion-body h5 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 8px 0;
+}
+
+.what-content-flex {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.what-tags {
+  font-size: 11px;
+  padding: 3px 9px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .what-content::before,
