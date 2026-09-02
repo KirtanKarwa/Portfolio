@@ -17,44 +17,43 @@ export const config = {
     experiences: [
         {
             position: "Software Engineering Student",
-            company: "Computer Science",
-            period: "2023 - 2024",
+            company: "Software Engineering Degree",
+            period: "2022 - 2026",
             location: "India",
-            description: "Mastered core computer science fundamentals, data structures, algorithms, and software development methodologies.",
+            description: "Graduated with a degree in Software Engineering (2022 - 2026). Mastered core computer science fundamentals, data structures, object-oriented programming, and software architecture.",
             responsibilities: [
-                "Studying object-oriented programming, data structures, and algorithms",
-                "Building foundational web development projects and Python scripts",
-                "Mastering version control workflows with Git and GitHub"
+                "Studying software design patterns, data structures, and algorithm design",
+                "Building software projects using C#, Python, and SQL databases",
+                "Mastering version control workflows with Git and software lifecycle engineering"
             ],
-            technologies: ["JavaScript", "Python", "Git", "GitHub", "Data Structures", "Algorithms"]
+            technologies: ["Software Engineering", "C#", "Python", "SQL", "Git", "Data Structures"]
         },
         {
-            position: "Frontend & 3D Web Developer",
-            company: "Independent Projects",
+            position: "Full Stack & Web Developer",
+            company: "Web Applications & Freelance",
             period: "2024 - 2025",
             location: "India",
-            description: "Specialized in creating high-impact visual UIs, GSAP animations, and interactive 3D graphics for web apps.",
+            description: "Built responsive full-stack websites, interactive 3D web applications, RESTful APIs, and database solutions for modern web products.",
             responsibilities: [
-                "Developing immersive 3D canvas experiences using React Three Fiber and Three.js",
-                "Implementing micro-interactions and smooth scroll animations with GSAP and Lenis",
-                "Creating mobile-first responsive user interfaces",
-                "Collaborating on open-source repositories and personal software projects"
+                "Developing full-stack web applications using React, TypeScript, and Node.js",
+                "Building interactive 3D web interfaces with Three.js and WebGL",
+                "Designing and integrating REST APIs and database systems"
             ],
-            technologies: ["React", "GSAP", "Three.js", "WebGL", "CSS3", "JavaScript"]
+            technologies: ["React", "TypeScript", "Three.js", "Node.js", "Express", "TailwindCSS"]
         },
         {
-            position: "Full Stack Engineer",
-            company: "Software Development & Freelance",
+            position: "Software & Automation Engineer",
+            company: "Consistent NOW — Software & AI",
             period: "2025 - Present",
             location: "Remote / India",
-            description: "Building scalable web applications, 3D interactive web experiences, and cloud-native solutions using modern tech stacks.",
+            description: "Consistently working as a Software & Automation Engineer. Engineering software products, automating business workflows, building modern websites, and developing intelligent AI models.",
             responsibilities: [
-                "Architecting frontend and backend web applications using React, TypeScript, and Node.js",
-                "Building interactive 3D web interfaces with Three.js and WebGL",
-                "Designing and integrating REST APIs and database systems",
-                "Optimizing application performance, responsiveness, and SEO"
+                "Engineering custom automation systems and desktop tools in C#, Python, and .NET",
+                "Developing and integrating AI models, smart assistants, and machine learning workflows",
+                "Building high-performance full-stack web applications and software products",
+                "Designing relational databases and optimizing complex SQL queries"
             ],
-            technologies: ["React", "TypeScript", "Three.js", "Node.js", "Express", "MongoDB", "TailwindCSS"]
+            technologies: ["C#", ".NET", "Python", "Automation", "AI Models", "React", "JavaScript", "SQL"]
         }
     ],
     projects: [
