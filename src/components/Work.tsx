@@ -42,6 +42,16 @@ const Work = () => {
         id: "work",
         invalidateOnRefresh: true,
         fastScrollEnd: true,
+        onToggle: (self) => {
+          const social = document.getElementById("social");
+          if (social) {
+            if (self.isActive) {
+              social.classList.add("social-hidden");
+            } else {
+              social.classList.remove("social-hidden");
+            }
+          }
+        },
       },
     });
 
@@ -59,6 +69,10 @@ const Work = () => {
     // Clean up
     return () => {
       clearTimeout(refreshTimer);
+      const social = document.getElementById("social");
+      if (social) {
+        social.classList.remove("social-hidden");
+      }
       timeline.kill();
       ScrollTrigger.getById("work")?.kill();
     };
