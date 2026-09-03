@@ -356,7 +356,7 @@
 }
 
 .landing-info h3 {
-  font-size: 22px;
+  font-size: 26px;
   letter-spacing: 2px;
   font-weight: 300;
   color: var(--accentColor);
@@ -366,11 +366,11 @@
 .landing-info h2,
 h2.landing-info-h2 {
   color: #e9d5ff !important;
-  font-size: 28px !important;
-  line-height: 38px !important;
+  font-size: 38px !important;
+  line-height: 48px !important;
   letter-spacing: 1px !important;
   width: auto !important;
-  max-width: 600px !important;
+  max-width: 750px !important;
   margin: 6px 0 10px 0 !important;
   font-family: "Geist", sans-serif;
   font-weight: 700 !important;
