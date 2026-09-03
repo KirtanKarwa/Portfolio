@@ -126,15 +126,15 @@ const Scene = () => {
           z: camera.position.z,
         };
         gsap.to(camera.position, {
-          x: 2.2,
-          y: 7.2,
-          z: 13.0,
+          x: -1.8,
+          y: 12.2,
+          z: 19.5,
           duration: 1.8,
           ease: "power3.inOut",
         });
         gsap.to(camera.rotation, {
-          x: -0.15,
-          y: 0.15,
+          x: -0.04,
+          y: 0.12,
           z: 0,
           duration: 1.8,
           ease: "power3.inOut",
