@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
+import gsap from "gsap";
 import setCharacter from "./utils/character";
 import setLighting from "./utils/lighting";
 import { useLoading } from "../../context/LoadingProvider";
@@ -12,12 +13,15 @@ import {
 } from "./utils/mouseUtils";
 import setAnimations from "./utils/animationUtils";
 import { setProgress } from "../Loading";
+import ResumeDeskModal from "../ResumeDeskModal";
 
 const Scene = () => {
   const canvasDiv = useRef<HTMLDivElement | null>(null);
   const hoverDivRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const { setLoading } = useLoading();
+  const [isResumeDeskOpen, setIsResumeDeskOpen] = useState(false);
+  const initialCamPos = useRef<{ x: number; y: number; z: number } | null>(null);
 
   const [, setChar] = useState<THREE.Object3D | null>(null);
 
@@ -87,7 +91,6 @@ const Scene = () => {
       });
 
       let mouse = { x: 0, y: 0 },
-        lastMouse = { x: 0, y: 0 },
         mouseSpeed = 0,
         interpolation = { x: 0.1, y: 0.2 };
 
@@ -96,7 +99,6 @@ const Scene = () => {
           const dx = x - mouse.x;
           const dy = y - mouse.y;
           mouseSpeed = Math.sqrt(dx * dx + dy * dy);
-          lastMouse = { ...mouse };
           mouse = { x, y };
         });
       };
@@ -116,6 +118,53 @@ const Scene = () => {
           interpolation = { x: interpolationX, y: interpolationY };
         });
       };
+
+      const handleOpenResumeDesk = () => {
+        initialCamPos.current = {
+          x: camera.position.x,
+          y: camera.position.y,
+          z: camera.position.z,
+        };
+        gsap.to(camera.position, {
+          x: 2.2,
+          y: 7.2,
+          z: 13.0,
+          duration: 1.8,
+          ease: "power3.inOut",
+        });
+        gsap.to(camera.rotation, {
+          x: -0.15,
+          y: 0.15,
+          z: 0,
+          duration: 1.8,
+          ease: "power3.inOut",
+        });
+        setIsResumeDeskOpen(true);
+      };
+
+      const handleCloseResumeDesk = () => {
+        const targetX = initialCamPos.current?.x || 0;
+        const targetY = initialCamPos.current?.y || 13.1;
+        const targetZ = initialCamPos.current?.z || 24.7;
+        gsap.to(camera.position, {
+          x: targetX,
+          y: targetY,
+          z: targetZ,
+          duration: 1.8,
+          ease: "power3.inOut",
+        });
+        gsap.to(camera.rotation, {
+          x: 0,
+          y: 0,
+          z: 0,
+          duration: 1.8,
+          ease: "power3.inOut",
+        });
+        setIsResumeDeskOpen(false);
+      };
+
+      window.addEventListener("openResumeDesk", handleOpenResumeDesk);
+      window.addEventListener("closeResumeDesk", handleCloseResumeDesk);
 
       document.addEventListener("mousemove", onMouseMove);
       const landingDiv = document.getElementById("landingDiv");
@@ -149,6 +198,8 @@ const Scene = () => {
       return () => {
         cancelAnimationFrame(animFrameId);
         clearTimeout(debounce);
+        window.removeEventListener("openResumeDesk", handleOpenResumeDesk);
+        window.removeEventListener("closeResumeDesk", handleCloseResumeDesk);
         scene.clear();
         renderer.dispose();
         if (canvasDiv.current && renderer.domElement && canvasDiv.current.contains(renderer.domElement)) {
@@ -171,6 +222,13 @@ const Scene = () => {
           <div className="character-hover" ref={hoverDivRef}></div>
         </div>
       </div>
+      {isResumeDeskOpen && (
+        <ResumeDeskModal
+          onClose={() => {
+            window.dispatchEvent(new CustomEvent("closeResumeDesk"));
+          }}
+        />
+      )}
     </>
   );
 };
