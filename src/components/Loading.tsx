@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import "./styles/Loading.css";
 import { useLoading } from "../context/LoadingProvider";
-import { config } from "../config";
 import Marquee from "react-fast-marquee";
 
 export const setProgress = (setLoading: (val: number) => void) => {

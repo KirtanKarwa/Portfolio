@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
-import gsap from "gsap";
 import setCharacter from "./utils/character";
 import setLighting from "./utils/lighting";
 import { useLoading } from "../../context/LoadingProvider";
@@ -13,15 +12,12 @@ import {
 } from "./utils/mouseUtils";
 import setAnimations from "./utils/animationUtils";
 import { setProgress } from "../Loading";
-import ResumeDeskModal from "../ResumeDeskModal";
 
 const Scene = () => {
   const canvasDiv = useRef<HTMLDivElement | null>(null);
   const hoverDivRef = useRef<HTMLDivElement>(null);
   const sceneRef = useRef<THREE.Scene | null>(null);
   const { setLoading } = useLoading();
-  const [isResumeDeskOpen, setIsResumeDeskOpen] = useState(false);
-  const initialCamPos = useRef<{ x: number; y: number; z: number } | null>(null);
 
   const [, setChar] = useState<THREE.Object3D | null>(null);
 
@@ -119,110 +115,6 @@ const Scene = () => {
         });
       };
 
-      const handleOpenResumeDesk = () => {
-        initialCamPos.current = {
-          x: camera.position.x,
-          y: camera.position.y,
-          z: camera.position.z,
-        };
-
-        const openTl = gsap.timeline({
-          onComplete: () => setIsResumeDeskOpen(true),
-        });
-
-        // Stage 1: Arc up over top of character while facing character
-        openTl
-          .to(camera.position, {
-            x: 0,
-            y: 19.5,
-            z: 16.0,
-            duration: 0.9,
-            ease: "power2.in",
-          })
-          .to(
-            camera.rotation,
-            {
-              x: -0.38,
-              y: 0,
-              z: 0,
-              duration: 0.9,
-              ease: "power2.in",
-            },
-            0
-          )
-          // Stage 2: Glide down to the desk surface beside the monitor
-          .to(camera.position, {
-            x: -1.5,
-            y: 11.8,
-            z: 18.0,
-            duration: 1.1,
-            ease: "power2.out",
-          })
-          .to(
-            camera.rotation,
-            {
-              x: -0.05,
-              y: 0.1,
-              z: 0,
-              duration: 1.1,
-              ease: "power2.out",
-            },
-            "<"
-          );
-      };
-
-      const handleCloseResumeDesk = () => {
-        setIsResumeDeskOpen(false);
-        const targetX = initialCamPos.current?.x || 0;
-        const targetY = initialCamPos.current?.y || 13.1;
-        const targetZ = initialCamPos.current?.z || 24.7;
-
-        const closeTl = gsap.timeline();
-
-        // Stage 1: Arc back up over top of character
-        closeTl
-          .to(camera.position, {
-            x: 0,
-            y: 19.5,
-            z: 16.0,
-            duration: 0.9,
-            ease: "power2.in",
-          })
-          .to(
-            camera.rotation,
-            {
-              x: -0.38,
-              y: 0,
-              z: 0,
-              duration: 0.9,
-              ease: "power2.in",
-            },
-            0
-          )
-          // Stage 2: Return to initial front view
-          .to(camera.position, {
-            x: targetX,
-            y: targetY,
-            z: targetZ,
-            duration: 1.1,
-            ease: "power2.out",
-          })
-          .to(
-            camera.rotation,
-            {
-              x: 0,
-              y: 0,
-              z: 0,
-              duration: 1.1,
-              ease: "power2.out",
-            },
-            "<"
-          );
-      };
-
-      window.addEventListener("openResumeDesk", handleOpenResumeDesk);
-      window.addEventListener("closeResumeDesk", handleCloseResumeDesk);
-
       document.addEventListener("mousemove", onMouseMove);
       const landingDiv = document.getElementById("landingDiv");
       if (landingDiv) {
@@ -255,8 +147,6 @@ const Scene = () => {
       return () => {
         cancelAnimationFrame(animFrameId);
         clearTimeout(debounce);
-        window.removeEventListener("openResumeDesk", handleOpenResumeDesk);
-        window.removeEventListener("closeResumeDesk", handleCloseResumeDesk);
         scene.clear();
         renderer.dispose();
         if (canvasDiv.current && renderer.domElement && canvasDiv.current.contains(renderer.domElement)) {
@@ -279,13 +169,6 @@ const Scene = () => {
           <div className="character-hover" ref={hoverDivRef}></div>
         </div>
       </div>
-      {isResumeDeskOpen && (
-        <ResumeDeskModal
-          onClose={() => {
-            window.dispatchEvent(new CustomEvent("closeResumeDesk"));
-          }}
-        />
-      )}
     </>
   );
 };

@@ -81,20 +81,12 @@ const SocialIcons = () => {
           </a>
         </span>
       </div>
-      <button
-        className="resume-button"
-        onClick={(e) => {
-          e.preventDefault();
-          window.dispatchEvent(new CustomEvent("openResumeDesk"));
-        }}
-        data-cursor="disable"
-        style={{ border: "none", background: "none", cursor: "pointer" }}
-      >
+      <a className="resume-button" href="#">
         <HoverLinks text="RESUME" />
         <span>
           <TbNotes />
         </span>
-      </button>
+      </a>
     </div>
   );
 };
