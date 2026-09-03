@@ -6,7 +6,7 @@ interface TechItem {
   url: string;
 }
 
-// Tech stack organized into 13 -> 11 -> 9 -> 7 -> 5 -> 3 -> 1 -> remaining pattern
+// Tech stack organized into 13 -> 11 -> 9 -> 7 -> 5 -> 3 -> 2 -> 1 pyramid pattern
 const techStack: TechItem[][] = [
   // Row 1 - 13 items
   [
@@ -66,19 +66,20 @@ const techStack: TechItem[][] = [
     { name: "GitHub", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg", url: "https://github.com" },
     { name: "Vercel", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg", url: "https://vercel.com" },
     { name: "Revit API", icon: "https://img.icons8.com/color/48/autodesk-revit.png", url: "https://www.autodesk.com/products/revit/overview" },
-    { name: "Excel VSTO", icon: "https://img.icons8.com/color/48/microsoft-excel-2019.png", url: "https://learn.microsoft.com/en-us/visualstudio/vsto/" },
+    { name: "AutoCAD", icon: "https://img.icons8.com/color/48/autocad.png", url: "https://www.autodesk.com/products/autocad/overview" },
   ],
   // Row 6 - 3 items
   [
+    { name: "Excel VSTO", icon: "https://img.icons8.com/color/48/microsoft-excel-2019.png", url: "https://learn.microsoft.com/en-us/visualstudio/vsto/" },
     { name: "VS Code", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg", url: "https://code.visualstudio.com" },
     { name: "Postman", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg", url: "https://postman.com" },
-    { name: "Jupyter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg", url: "https://jupyter.org" },
   ],
-  // Row 7 - 1 item
+  // Row 7 - 2 items
   [
+    { name: "Jupyter", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jupyter/jupyter-original.svg", url: "https://jupyter.org" },
     { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg", url: "https://figma.com" },
   ],
-  // Row 8 - All remaining items (1 item)
+  // Row 8 - 1 item
   [
     { name: "MS Office", icon: "https://img.icons8.com/color/48/microsoft-office-2019.png", url: "https://www.microsoft.com/microsoft-365" },
   ],
