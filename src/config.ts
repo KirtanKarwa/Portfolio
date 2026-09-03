@@ -16,69 +16,70 @@ export const config = {
     },
     experiences: [
         {
-            position: "Software Engineering Student",
-            company: "Started Degree",
+            position: "Started Software Engineering Degree",
+            company: "Computer Science & Engineering",
             period: "2022",
             location: "India",
-            description: "Enrolled in Software Engineering degree. Laying the foundations in computer science, software logic, and engineering fundamentals.",
+            description: "Commenced Software Engineering degree. Built a strong computer science foundation, learning core engineering principles, problem solving, and software design.",
             responsibilities: [
-                "Enrolled in Software Engineering degree program",
-                "Studying core computer science fundamentals and mathematics",
-                "Building initial problem-solving logic and engineering basics"
+                "Studying computer science fundamentals and software engineering concepts",
+                "Building initial logic-building scripts and structural algorithms",
+                "Mastering version control workflows with Git"
             ],
-            technologies: ["Software Engineering", "Computer Science", "Logic", "Git"]
+            technologies: ["Software Engineering", "Computer Science", "Git", "Algorithms"]
         },
         {
-            position: "Core Programming Fundamentals",
-            company: "Python, C & C++ Mastery",
+            position: "Programming & Systems Languages",
+            company: "Core Programming Mastery",
             period: "2023",
             location: "India",
-            description: "Learnt lower-level and high-level programming languages including Python, C, and C++. Built system scripts and object-oriented programs.",
+            description: "Learned and mastered core programming languages including Python, C, and C++. Developed system scripts, memory management logic, and algorithmic programs.",
             responsibilities: [
-                "Mastering C & C++ memory management, pointers, and object-oriented programming",
-                "Learning Python for scripting, automation, and algorithmic problem solving",
-                "Writing clean, modular code across multiple paradigms"
+                "Mastered Python syntax, automation scripting, and object-oriented concepts",
+                "Built C and C++ memory management and low-level algorithm implementations",
+                "Developed data processing utilities and terminal software"
             ],
-            technologies: ["Python", "C", "C++", "OOP", "Data Structures"]
+            technologies: ["Python", "C", "C++", "Data Structures", "Object-Oriented Programming"]
         },
         {
             position: "Software Projects & Data Structures",
-            company: "Python Projects & Java DSA",
+            company: "Application Development & DSA",
             period: "2024",
             location: "India",
-            description: "Started creating software projects in Python while practicing Data Structures & Algorithms (DSA) using Java.",
+            description: "Created software applications in Python while practicing Data Structures & Algorithms (DSA) extensively using Java to build strong problem-solving skills.",
             responsibilities: [
-                "Practicing Data Structures and Algorithms (DSA) in Java",
-                "Developing practical software applications and automation tools in Python",
-                "Solving complex algorithmic puzzles and optimizing code performance"
+                "Practiced Data Structures and Algorithms (DSA) in Java",
+                "Built practical desktop applications and software utilities in Python",
+                "Implemented object-oriented design patterns and clean code principles"
             ],
-            technologies: ["Java", "DSA", "Python", "Algorithms", "Software Projects"]
+            technologies: ["Java", "Python", "DSA", "Data Structures", "Algorithms", "Software Design"]
         },
         {
-            position: "AI & Data Science Developer",
-            company: "AI, ML & Financial Systems",
+            position: "AI, Data Science & Financial Engineering",
+            company: "AI & Machine Learning Projects",
             period: "2025",
             location: "India",
-            description: "Created advanced projects in AI and Data Science, including Algorithmic Trading engines and Deepfake Detection computer vision models.",
+            description: "Developed advanced projects in AI, Machine Learning, and Data Science — including building Deepfake Detector (computer vision) and Algorithmic Trading engines.",
             responsibilities: [
-                "Developing deep learning computer vision models for Deepfake Detection",
-                "Engineering data-driven Algorithmic Trading systems and financial tools",
-                "Working with Python AI libraries, machine learning algorithms, and data pipelines"
+                "Developed Deepfake Detection computer vision models using Python, PyTorch & OpenCV",
+                "Engineered programmatic Algorithmic Trading data systems using TypeScript and Node.js",
+                "Built full-stack web applications and AI agent integrations"
             ],
-            technologies: ["Python", "PyTorch", "AI Models", "Data Science", "OpenCV", "TypeScript", "Algo Trading"]
+            technologies: ["Python", "AI / ML", "Deepfake Detection", "Algorithmic Trading", "PyTorch", "TypeScript", "OpenCV"]
         },
         {
             position: "Automation Engineer",
             company: "Consistent Engineering Consultants",
             period: "2026 - Present",
             location: "Dubai, United Arab Emirates",
-            description: "Landed internship and secured full-time role as Automation Engineer in Dubai. Developing custom software, Revit add-ins, Excel VSTO tools, web apps, and AI products.",
+            description: "Landed internship and secured full-time position as Automation Engineer at Consistent Engineering Consultants in Dubai. Developing software products (MEP Calculator), Revit API add-ins, Excel VSTO tools, and digital engineering solutions.",
             responsibilities: [
-                "Secured full-time Automation Engineer role at Consistent Engineering Consultants",
-                "Developing custom MEP engineering software tools and automated Revit API add-ins",
-                "Building Excel VSTO plugins and contributing to digital products like MEP Calculator and Tarv"
+                "Developing custom software applications and MEP engineering tools to streamline complex workflows",
+                "Building Revit add-ins and API integrations for automated BIM and engineering processes",
+                "Creating Excel VSTO add-ins and automated engineering calculation modules",
+                "Contributing to web development and engineering software products like MEP Calculator and Tarv"
             ],
-            technologies: ["C#", ".NET", "Revit API", "Excel VSTO", "Python", "React", "TypeScript", "SQL", "MEP Automation"]
+            technologies: ["C#", ".NET", "Revit API", "Python", "Excel VSTO", "React", "TypeScript", "SQL", "MEP Automation"]
         }
     ],
     projects: [
