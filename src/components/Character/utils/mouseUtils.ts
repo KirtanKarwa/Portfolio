@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import gsap from "gsap";
 
 export const handleMouseMove = (
   event: MouseEvent,
@@ -41,8 +40,7 @@ export const handleHeadRotation = (
   mouseY: number,
   interpolationX: number,
   interpolationY: number,
-  lerp: (x: number, y: number, t: number) => number,
-  character?: THREE.Object3D | null
+  lerp: (x: number, y: number, t: number) => number
 ) => {
   if (!headBone) return;
   if (window.scrollY < 200) {
@@ -75,40 +73,10 @@ export const handleHeadRotation = (
         interpolationX
       );
     }
-
-    // 🌟 3D Mouse Parallax Body Tilt
-    if (character) {
-      character.rotation.z = lerp(character.rotation.z, -mouseX * 0.04, 0.05);
-      character.rotation.x = lerp(character.rotation.x, mouseY * 0.03, 0.05);
-    }
   } else {
     if (window.innerWidth > 1024) {
       headBone.rotation.x = lerp(headBone.rotation.x, -0.4, 0.03);
       headBone.rotation.y = lerp(headBone.rotation.y, -0.3, 0.03);
-      if (character) {
-        character.rotation.z = lerp(character.rotation.z, 0, 0.05);
-      }
     }
   }
-};
-
-// 🌟 Interactive Click Reaction (Nod & Eyebrow Flick)
-export const triggerClickReaction = (
-  headBone: THREE.Object3D | null,
-  mixer?: THREE.AnimationMixer | null
-) => {
-  if (!headBone) return;
-
-  // Head Nod Animation
-  gsap.timeline()
-    .to(headBone.rotation, {
-      x: headBone.rotation.x + 0.35,
-      duration: 0.15,
-      ease: "power2.out"
-    })
-    .to(headBone.rotation, {
-      x: headBone.rotation.x,
-      duration: 0.4,
-      ease: "elastic.out(1, 0.4)"
-    });
 };

@@ -9,7 +9,6 @@ import {
   handleTouchEnd,
   handleHeadRotation,
   handleTouchMove,
-  triggerClickReaction,
 } from "./utils/mouseUtils";
 import setAnimations from "./utils/animationUtils";
 import { setProgress } from "../Loading";
@@ -20,7 +19,7 @@ const Scene = () => {
   const sceneRef = useRef<THREE.Scene | null>(null);
   const { setLoading } = useLoading();
 
-  const [charModel, setChar] = useState<THREE.Object3D | null>(null);
+  const [, setChar] = useState<THREE.Object3D | null>(null);
 
   useEffect(() => {
     if (canvasDiv.current) {
@@ -88,10 +87,18 @@ const Scene = () => {
       });
 
       let mouse = { x: 0, y: 0 },
+        lastMouse = { x: 0, y: 0 },
+        mouseSpeed = 0,
         interpolation = { x: 0.1, y: 0.2 };
 
       const onMouseMove = (event: MouseEvent) => {
-        handleMouseMove(event, (x, y) => (mouse = { x, y }));
+        handleMouseMove(event, (x, y) => {
+          const dx = x - mouse.x;
+          const dy = y - mouse.y;
+          mouseSpeed = Math.sqrt(dx * dx + dy * dy);
+          lastMouse = { ...mouse };
+          mouse = { x, y };
+        });
       };
       let debounce: number | undefined;
       const onTouchStart = (event: TouchEvent) => {
@@ -110,26 +117,16 @@ const Scene = () => {
         });
       };
 
-      const handleCanvasClick = () => {
-        if (headBone) {
-          triggerClickReaction(headBone, mixer);
-        }
-      };
-
       document.addEventListener("mousemove", onMouseMove);
       const landingDiv = document.getElementById("landingDiv");
       if (landingDiv) {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
-
-      const currentCanvas = canvasDiv.current;
-      if (currentCanvas) {
-        currentCanvas.addEventListener("click", handleCanvasClick);
-      }
-
       const animate = () => {
         animFrameId = requestAnimationFrame(animate);
+        light.updateCursorLighting(mouse.x, mouse.y, mouseSpeed);
+        mouseSpeed *= 0.92; // decay mouse speed smoothly
         if (headBone) {
           handleHeadRotation(
             headBone,
@@ -137,8 +134,7 @@ const Scene = () => {
             mouse.y,
             interpolation.x,
             interpolation.y,
-            THREE.MathUtils.lerp,
-            charModel
+            THREE.MathUtils.lerp
           );
           light.setPointLight(screenLight);
         }
@@ -157,9 +153,6 @@ const Scene = () => {
         renderer.dispose();
         if (canvasDiv.current && renderer.domElement && canvasDiv.current.contains(renderer.domElement)) {
           canvasDiv.current.removeChild(renderer.domElement);
-        }
-        if (currentCanvas) {
-          currentCanvas.removeEventListener("click", handleCanvasClick);
         }
         if (landingDiv) {
           document.removeEventListener("mousemove", onMouseMove);

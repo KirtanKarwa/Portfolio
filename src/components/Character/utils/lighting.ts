@@ -18,6 +18,13 @@ const setLighting = (scene: THREE.Scene) => {
   pointLight.castShadow = true;
   scene.add(pointLight);
 
+  // Dynamic interactive light following cursor across the 3D model
+  const cursorLight = new THREE.PointLight(0xe4d4ff, 0, 35, 2.2);
+  cursorLight.position.set(0, 12, 10);
+  scene.add(cursorLight);
+
+  let targetCursorIntensity = 1.2;
+
   new RGBELoader()
     .setPath("/models/")
     .load("char_enviorment.hdr", function (texture) {
@@ -28,12 +35,27 @@ const setLighting = (scene: THREE.Scene) => {
     });
 
   function setPointLight(screenLight: any) {
-    if (screenLight.material.opacity > 0.9) {
+    if (screenLight && screenLight.material && screenLight.material.opacity > 0.9) {
       pointLight.intensity = screenLight.material.emissiveIntensity * 20;
     } else {
       pointLight.intensity = 0;
     }
   }
+
+  function updateCursorLighting(mouseX: number, mouseY: number, speed: number = 0) {
+    // Smoothly position cursor light in 3D scene relative to mouse
+    cursorLight.position.x = THREE.MathUtils.lerp(cursorLight.position.x, mouseX * 14, 0.08);
+    cursorLight.position.y = THREE.MathUtils.lerp(cursorLight.position.y, mouseY * 10 + 12, 0.08);
+    
+    // Shift directional rim lighting position based on mouse for dynamic rim reflection
+    directionalLight.position.x = THREE.MathUtils.lerp(directionalLight.position.x, -0.47 + mouseX * 3, 0.05);
+
+    // Boost glow intensity dynamically when cursor moves fast
+    const speedBoost = Math.min(speed * 2.5, 2.0);
+    targetCursorIntensity = 1.2 + speedBoost;
+    cursorLight.intensity = THREE.MathUtils.lerp(cursorLight.intensity, targetCursorIntensity, 0.1);
+  }
+
   const duration = 2;
   const ease = "power2.inOut";
   function turnOnLights() {
@@ -47,6 +69,11 @@ const setLighting = (scene: THREE.Scene) => {
       duration: duration,
       ease: ease,
     });
+    gsap.to(cursorLight, {
+      intensity: 1.2,
+      duration: duration,
+      ease: ease,
+    });
     gsap.to(".character-rim", {
       y: "55%",
       opacity: 1,
@@ -55,7 +82,7 @@ const setLighting = (scene: THREE.Scene) => {
     });
   }
 
-  return { setPointLight, turnOnLights };
+  return { setPointLight, turnOnLights, updateCursorLighting };
 };
 
 export default setLighting;
