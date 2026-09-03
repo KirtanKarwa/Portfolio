@@ -17,30 +17,68 @@ export const config = {
     experiences: [
         {
             position: "Software Engineering Student",
-            company: "Software Engineering Degree",
-            period: "2022 - 2026",
+            company: "Started Degree",
+            period: "2022",
             location: "India",
-            description: "Completed Software Engineering degree (2022 - 2026). Mastered core computer science fundamentals, data structures, algorithms, object-oriented programming, and software architecture.",
+            description: "Enrolled in Software Engineering degree. Laying the foundations in computer science, software logic, and engineering fundamentals.",
             responsibilities: [
-                "Studying software engineering principles, algorithm design, and system architecture",
-                "Building software applications in C#, Python, and SQL",
-                "Mastering version control, software lifecycles, and engineering practices"
+                "Enrolled in Software Engineering degree program",
+                "Studying core computer science fundamentals and mathematics",
+                "Building initial problem-solving logic and engineering basics"
             ],
-            technologies: ["Software Engineering", "C#", "Python", "SQL", "Git", "Data Structures"]
+            technologies: ["Software Engineering", "Computer Science", "Logic", "Git"]
+        },
+        {
+            position: "Core Programming Fundamentals",
+            company: "Python, C & C++ Mastery",
+            period: "2023",
+            location: "India",
+            description: "Learnt lower-level and high-level programming languages including Python, C, and C++. Built system scripts and object-oriented programs.",
+            responsibilities: [
+                "Mastering C & C++ memory management, pointers, and object-oriented programming",
+                "Learning Python for scripting, automation, and algorithmic problem solving",
+                "Writing clean, modular code across multiple paradigms"
+            ],
+            technologies: ["Python", "C", "C++", "OOP", "Data Structures"]
+        },
+        {
+            position: "Software Projects & Data Structures",
+            company: "Python Projects & Java DSA",
+            period: "2024",
+            location: "India",
+            description: "Started creating software projects in Python while practicing Data Structures & Algorithms (DSA) using Java.",
+            responsibilities: [
+                "Practicing Data Structures and Algorithms (DSA) in Java",
+                "Developing practical software applications and automation tools in Python",
+                "Solving complex algorithmic puzzles and optimizing code performance"
+            ],
+            technologies: ["Java", "DSA", "Python", "Algorithms", "Software Projects"]
+        },
+        {
+            position: "AI & Data Science Developer",
+            company: "AI, ML & Financial Systems",
+            period: "2025",
+            location: "India",
+            description: "Created advanced projects in AI and Data Science, including Algorithmic Trading engines and Deepfake Detection computer vision models.",
+            responsibilities: [
+                "Developing deep learning computer vision models for Deepfake Detection",
+                "Engineering data-driven Algorithmic Trading systems and financial tools",
+                "Working with Python AI libraries, machine learning algorithms, and data pipelines"
+            ],
+            technologies: ["Python", "PyTorch", "AI Models", "Data Science", "OpenCV", "TypeScript", "Algo Trading"]
         },
         {
             position: "Automation Engineer",
             company: "Consistent Engineering Consultants",
             period: "2026 - Present",
             location: "Dubai, United Arab Emirates",
-            description: "Working as an Automation Engineer in Dubai. Developing software applications, automating MEP/HVAC engineering workflows, building Revit add-ins (Revit API), Excel VSTO tools, web products, and digital engineering solutions.",
+            description: "Landed internship and secured full-time role as Automation Engineer in Dubai. Developing custom software, Revit add-ins, Excel VSTO tools, web apps, and AI products.",
             responsibilities: [
-                "Developing custom software applications and MEP engineering tools to streamline complex workflows",
-                "Building Revit add-ins and API integrations for automated BIM and engineering processes",
-                "Creating Excel VSTO add-ins and automated engineering calculation modules",
-                "Contributing to web development and engineering software products like MEP Calculator and Tarv"
+                "Secured full-time Automation Engineer role at Consistent Engineering Consultants",
+                "Developing custom MEP engineering software tools and automated Revit API add-ins",
+                "Building Excel VSTO plugins and contributing to digital products like MEP Calculator and Tarv"
             ],
-            technologies: ["C#", ".NET", "Revit API", "Python", "Excel VSTO", "React", "TypeScript", "SQL", "MEP Automation"]
+            technologies: ["C#", ".NET", "Revit API", "Excel VSTO", "Python", "React", "TypeScript", "SQL", "MEP Automation"]
         }
     ],
     projects: [
