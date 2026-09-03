@@ -177,7 +177,6 @@ export const config = {
         github: "https://github.com/KirtanKarwa",
         linkedin: "https://linkedin.com/in/kirtankarwa",
         twitter: "https://x.com/kirtankarwa",
-        facebook: "https://facebook.com/kirtankarwa",
         instagram: "https://instagram.com/kirtankarwa"
     },
     skills: [
