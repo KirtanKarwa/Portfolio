@@ -9,6 +9,7 @@ import {
   handleTouchEnd,
   handleHeadRotation,
   handleTouchMove,
+  triggerClickReaction,
 } from "./utils/mouseUtils";
 import setAnimations from "./utils/animationUtils";
 import { setProgress } from "../Loading";
@@ -19,7 +20,7 @@ const Scene = () => {
   const sceneRef = useRef<THREE.Scene | null>(null);
   const { setLoading } = useLoading();
 
-  const [, setChar] = useState<THREE.Object3D | null>(null);
+  const [charModel, setChar] = useState<THREE.Object3D | null>(null);
 
   useEffect(() => {
     if (canvasDiv.current) {
@@ -109,12 +110,24 @@ const Scene = () => {
         });
       };
 
+      const handleCanvasClick = () => {
+        if (headBone) {
+          triggerClickReaction(headBone, mixer);
+        }
+      };
+
       document.addEventListener("mousemove", onMouseMove);
       const landingDiv = document.getElementById("landingDiv");
       if (landingDiv) {
         landingDiv.addEventListener("touchstart", onTouchStart);
         landingDiv.addEventListener("touchend", onTouchEnd);
       }
+
+      const currentCanvas = canvasDiv.current;
+      if (currentCanvas) {
+        currentCanvas.addEventListener("click", handleCanvasClick);
+      }
+
       const animate = () => {
         animFrameId = requestAnimationFrame(animate);
         if (headBone) {
@@ -124,7 +137,8 @@ const Scene = () => {
             mouse.y,
             interpolation.x,
             interpolation.y,
-            THREE.MathUtils.lerp
+            THREE.MathUtils.lerp,
+            charModel
           );
           light.setPointLight(screenLight);
         }
@@ -143,6 +157,9 @@ const Scene = () => {
         renderer.dispose();
         if (canvasDiv.current && renderer.domElement && canvasDiv.current.contains(renderer.domElement)) {
           canvasDiv.current.removeChild(renderer.domElement);
+        }
+        if (currentCanvas) {
+          currentCanvas.removeEventListener("click", handleCanvasClick);
         }
         if (landingDiv) {
           document.removeEventListener("mousemove", onMouseMove);
