@@ -57,6 +57,17 @@ export const config = {
         },
         {
             id: 2,
+            title: "3D Interactive Developer Portfolio",
+            subtitle: "WebGL Canvas Experience",
+            category: "3D / WebGL / React",
+            type: "Open Source",
+            technologies: "React, TypeScript, Three.js, GSAP, WebGL, Vite",
+            image: "/images/placeholder.webp",
+            description: "A high-performance 3D interactive portfolio featuring a rendered 3D character, GSAP scroll transitions, smooth WebGL canvas shaders, and glassmorphism UI.",
+            link: "https://github.com/KirtanKarwa/Portfolio"
+        },
+        {
+            id: 3,
             title: "Deepfake Detector",
             subtitle: "AI Computer Vision System",
             category: "AI / Machine Learning",
@@ -67,7 +78,7 @@ export const config = {
             link: "https://github.com/KirtanKarwa/Deepfake-Detector"
         },
         {
-            id: 3,
+            id: 4,
             title: "Tarv",
             subtitle: "Web Development & UI/UX Product",
             category: "Web Development / UI/UX",
@@ -78,7 +89,7 @@ export const config = {
             link: "https://github.com/KirtanKarwa"
         },
         {
-            id: 4,
+            id: 5,
             title: "Algorithmic Trading",
             subtitle: "Data-Driven Financial Engine",
             category: "Financial Tech / Data",
@@ -89,7 +100,7 @@ export const config = {
             link: "https://github.com/KirtanKarwa/Algorithmic-Trading"
         },
         {
-            id: 5,
+            id: 6,
             title: "Agriwork Connect",
             subtitle: "Real-World Web Application",
             category: "Full Stack Web",
@@ -98,17 +109,6 @@ export const config = {
             image: "/images/placeholder.webp",
             description: "A web application built with JavaScript to solve real-world agricultural and labor connection challenges through digital software.",
             link: "https://github.com/KirtanKarwa/Agriwork-Connect"
-        },
-        {
-            id: 6,
-            title: "FocusFlow",
-            subtitle: "Productivity Web App",
-            category: "React / Frontend",
-            type: "Open Source",
-            technologies: "React, JavaScript, State Management, CSS3",
-            image: "/images/placeholder.webp",
-            description: "A sleek productivity and workflow management web application built with React, featuring state management and micro-interactions.",
-            link: "https://github.com/KirtanKarwa/FocusFlow"
         },
         {
             id: 7,
@@ -123,14 +123,14 @@ export const config = {
         },
         {
             id: 8,
-            title: "3D Interactive Portfolio",
-            subtitle: "WebGL Canvas Experience",
-            category: "3D / WebGL / React",
+            title: "FocusFlow",
+            subtitle: "Productivity Web App",
+            category: "React / Frontend",
             type: "Open Source",
-            technologies: "React, TypeScript, Three.js, GSAP, WebGL, Vite",
+            technologies: "React, JavaScript, State Management, CSS3",
             image: "/images/placeholder.webp",
-            description: "A high-performance 3D interactive portfolio featuring a rendered 3D character, GSAP scroll transitions, smooth WebGL canvas shaders, and glassmorphism UI.",
-            link: "https://github.com/KirtanKarwa/Portfolio"
+            description: "A sleek productivity and workflow management web application built with React, featuring state management and micro-interactions.",
+            link: "https://github.com/KirtanKarwa/FocusFlow"
         }
     ],
     contact: {
