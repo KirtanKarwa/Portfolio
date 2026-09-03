@@ -3,16 +3,16 @@ export const config = {
         name: "Kirtan",
         fullName: "Kirtan Karwa",
         title: "Software & Automation Engineer",
-        description: "Software & Automation Engineer working across C#, Python, React, JavaScript, .NET, SQL, and AI."
+        description: "Software & Automation Engineer building across Engineering, Web, Data & AI."
     },
     social: {
         github: "KirtanKarwa",
         email: "karwakirtan@gmail.com",
-        location: "India"
+        location: "Dubai, United Arab Emirates"
     },
     about: {
         title: "About Me",
-        description: "I write code, automate things, build websites, work with data, and occasionally argue with computers when they refuse to cooperate. I’m a Software & Automation Engineer working across C#, Python, React, JavaScript, .NET, SQL, and AI. I enjoy turning complicated problems into simple, scalable solutions—from engineering automation and software products to modern web applications and intelligent systems. If something is repetitive, my first instinct is usually: “Why are we doing this manually?”"
+        description: "I’m a Software & Automation Engineer who believes most repetitive tasks are just automation projects waiting to happen. I work across software development, web technologies, engineering automation, data, and AI, using technologies such as C#, Python, JavaScript, TypeScript, React, .NET, and SQL. From engineering software and automation tools to modern web applications and AI-powered projects, I enjoy turning complex problems into intuitive, scalable solutions. I’m constantly learning, experimenting, and building things that make technology work a little smarter."
     },
     experiences: [
         {
@@ -20,7 +20,7 @@ export const config = {
             company: "Software Engineering Degree",
             period: "2022 - 2026",
             location: "India",
-            description: "Completed Software Engineering degree (2022 - 2026). Mastered computer science fundamentals, software architecture, data structures, algorithms, and object-oriented programming.",
+            description: "Completed Software Engineering degree (2022 - 2026). Mastered core computer science fundamentals, data structures, algorithms, object-oriented programming, and software architecture.",
             responsibilities: [
                 "Studying software engineering principles, algorithm design, and system architecture",
                 "Building software applications in C#, Python, and SQL",
@@ -29,68 +29,108 @@ export const config = {
             technologies: ["Software Engineering", "C#", "Python", "SQL", "Git", "Data Structures"]
         },
         {
-            position: "AI, Automation & Web Developer",
-            company: "Software, AI & Automation Projects",
-            period: "2025",
-            location: "India",
-            description: "Created numerous projects across automation, AI models, custom software products, and modern websites.",
-            responsibilities: [
-                "Engineered workflow automation tools and Python/C# scripts",
-                "Developed intelligent AI models, chatbots, and smart assistant integrations",
-                "Built full-stack web applications and interactive digital products"
-            ],
-            technologies: ["Automation", "AI Models", "Python", "React", "C#", "JavaScript", "SQL"]
-        },
-        {
-            position: "Software & Automation Engineer",
-            company: "Software & Automation Engineering",
+            position: "Automation Engineer",
+            company: "Consistent Engineering Consultants",
             period: "2026 - Present",
-            location: "Remote / India",
-            description: "Working as a Software & Automation Engineer. Engineering scalable software products, building business automation systems, modern websites, and developing intelligent AI models.",
+            location: "Dubai, United Arab Emirates",
+            description: "Working as an Automation Engineer in Dubai. Developing software applications, automating MEP/HVAC engineering workflows, building Revit add-ins (Revit API), Excel VSTO tools, web products, and digital engineering solutions.",
             responsibilities: [
-                "Engineering custom automation solutions and desktop software using C#, Python, and .NET",
-                "Developing full-stack web applications and intelligent AI system integrations",
-                "Designing robust database architectures and optimizing complex SQL queries"
+                "Developing custom software applications and MEP engineering tools to streamline complex workflows",
+                "Building Revit add-ins and API integrations for automated BIM and engineering processes",
+                "Creating Excel VSTO add-ins and automated engineering calculation modules",
+                "Contributing to web development and engineering software products like MEP Calculator and Tarv"
             ],
-            technologies: ["C#", ".NET", "Python", "Automation", "AI Models", "React", "JavaScript", "SQL"]
+            technologies: ["C#", ".NET", "Revit API", "Python", "Excel VSTO", "React", "TypeScript", "SQL", "MEP Automation"]
         }
     ],
     projects: [
         {
             id: 1,
-            title: "3D Interactive Developer Portfolio",
-            category: "3D / WebGL",
-            technologies: "React, TypeScript, Three.js, GSAP, WebGL, Vite",
-            image: "/Screenshot_2026-04-08_22-10-00.png",
-            description: "A high-performance 3D interactive portfolio featuring a rendered 3D character, GSAP scroll transitions, smooth canvas shaders, and modern glassmorphism UI.",
-            link: "https://github.com/KirtanKarwa/Portfolio"
-        },
-        {
-            id: 2,
-            title: "Developer Portfolios Explorer",
-            category: "Full Stack Web App",
-            technologies: "HTML5, CSS3, JavaScript, REST Feed API, Glassmorphism UI",
+            title: "MEP Calculator",
+            subtitle: "Engineering Calculation Platform",
+            category: "Engineering Software / Product",
+            type: "Professional Work",
+            technologies: "JavaScript, HTML5, CSS3, Engineering Math, Web UI",
             image: "/images/placeholder.webp",
-            description: "An interactive portfolio search & discovery platform indexing nearly 2,000 developer portfolios with category filters, iframe live preview modal, and analytics.",
+            description: "An engineering software product designed to make MEP (Mechanical, Electrical, Plumbing) calculations and engineering workflows faster, more accurate, and intuitive.",
             link: "https://github.com/KirtanKarwa"
         },
         {
-            id: 3,
-            title: "Full Stack Web Application Platform",
-            category: "Full Stack",
-            technologies: "React, Node.js, Express, MongoDB, TypeScript, TailwindCSS",
+            id: 2,
+            title: "Deepfake Detector",
+            subtitle: "AI Computer Vision System",
+            category: "AI / Machine Learning",
+            type: "Open Source",
+            technologies: "Python, PyTorch, OpenCV, Computer Vision, Deep Learning",
             image: "/images/placeholder.webp",
-            description: "A robust full-stack web application with user authentication, database integration, RESTful endpoints, and responsive user interfaces.",
+            description: "An AI-powered computer vision application built with Python to detect manipulated visual media and deepfakes using deep neural networks.",
+            link: "https://github.com/KirtanKarwa/Deepfake-Detector"
+        },
+        {
+            id: 3,
+            title: "Tarv",
+            subtitle: "Web Development & UI/UX Product",
+            category: "Web Development / UI/UX",
+            type: "Professional Work",
+            technologies: "React, TypeScript, Modern UI/UX, Web Architecture",
+            image: "/images/placeholder.webp",
+            description: "A modern web product platform featuring responsive frontend architecture, intuitive UI/UX design, and web-based engineering tools.",
             link: "https://github.com/KirtanKarwa"
         },
         {
             id: 4,
-            title: "AI & Automation Toolkit",
-            category: "AI / Python",
-            technologies: "Python, OpenAI API, FastAPI, React, Automation Tools",
+            title: "Algorithmic Trading",
+            subtitle: "Data-Driven Financial Engine",
+            category: "Financial Tech / Data",
+            type: "Open Source",
+            technologies: "TypeScript, Node.js, Financial Algorithms, Data Systems",
             image: "/images/placeholder.webp",
-            description: "An intelligent automation suite leveraging natural language processing, automated workflow triggers, and smart API integrations.",
+            description: "A data-driven automated algorithmic trading engine built with TypeScript to evaluate market models and execute programmatic strategies.",
+            link: "https://github.com/KirtanKarwa/Algorithmic-Trading"
+        },
+        {
+            id: 5,
+            title: "Agriwork Connect",
+            subtitle: "Real-World Web Application",
+            category: "Full Stack Web",
+            type: "Open Source",
+            technologies: "JavaScript, Web Applications, REST APIs, Product Design",
+            image: "/images/placeholder.webp",
+            description: "A web application built with JavaScript to solve real-world agricultural and labor connection challenges through digital software.",
+            link: "https://github.com/KirtanKarwa/Agriwork-Connect"
+        },
+        {
+            id: 6,
+            title: "FocusFlow",
+            subtitle: "Productivity Web App",
+            category: "React / Frontend",
+            type: "Open Source",
+            technologies: "React, JavaScript, State Management, CSS3",
+            image: "/images/placeholder.webp",
+            description: "A sleek productivity and workflow management web application built with React, featuring state management and micro-interactions.",
+            link: "https://github.com/KirtanKarwa/FocusFlow"
+        },
+        {
+            id: 7,
+            title: "Revit & HVAC Automation Tools",
+            subtitle: "BIM & Engineering Automation",
+            category: "Engineering Automation",
+            type: "Professional Work",
+            technologies: "C#, .NET, Revit API, Excel VSTO, Python, HVAC Calculations",
+            image: "/images/placeholder.webp",
+            description: "A suite of custom C# Revit API add-ins and Excel VSTO tools built to automate MEP/HVAC calculations and BIM workflows at scale.",
             link: "https://github.com/KirtanKarwa"
+        },
+        {
+            id: 8,
+            title: "3D Interactive Portfolio",
+            subtitle: "WebGL Canvas Experience",
+            category: "3D / WebGL / React",
+            type: "Open Source",
+            technologies: "React, TypeScript, Three.js, GSAP, WebGL, Vite",
+            image: "/images/placeholder.webp",
+            description: "A high-performance 3D interactive portfolio featuring a rendered 3D character, GSAP scroll transitions, smooth WebGL canvas shaders, and glassmorphism UI.",
+            link: "https://github.com/KirtanKarwa/Portfolio"
         }
     ],
     contact: {
@@ -103,34 +143,34 @@ export const config = {
     },
     skills: [
         {
-            title: "FULL STACK",
-            description: "Modern web development & scalable backend solutions",
-            details: "Building responsive, fast, and accessible web applications with React, TypeScript, Node.js, and databases. Crafting seamless user experiences with modern UI principles.",
-            tools: ["React", "TypeScript", "Node.js", "Express", "Next.js", "MongoDB", "PostgreSQL", "TailwindCSS", "REST APIs", "Git"]
+            title: "ENGINEERING AUTOMATION",
+            description: "Revit API add-ins, BIM automation & Excel VSTO tools",
+            details: "Automating MEP & HVAC engineering workflows with C#, .NET, Revit API, and VSTO. Building software tools that eliminate repetitive tasks and boost engineering productivity.",
+            tools: ["C#", ".NET", "Revit API", "Excel VSTO", "Python", "BIM Automation", "HVAC Calculations", "Process Automation"]
+        },
+        {
+            title: "WEB DEVELOPMENT",
+            description: "Full-stack web applications, product engineering & UI/UX",
+            details: "Building responsive, modern, and accessible web applications using React, TypeScript, Node.js, and databases. Creating web products like MEP Calculator and Tarv.",
+            tools: ["React", "TypeScript", "JavaScript", "Node.js", "Express", "Next.js", "TailwindCSS", "REST APIs", "Git"]
+        },
+        {
+            title: "SOFTWARE ENGINEERING",
+            description: "Desktop software, REST APIs & object-oriented design",
+            details: "Designing scalable software solutions, reusable tools, and backend services across C#, Python, and .NET. Converting complex engineering requirements into software.",
+            tools: ["C#", "Python", ".NET", "APIs", "Object-Oriented Design", "Desktop Apps", "System Scripting", "CI/CD"]
+        },
+        {
+            title: "DATA & AI",
+            description: "AI applications, deepfake detection & data engineering",
+            details: "Developing machine learning models, computer vision applications, and data-driven systems. Experience in Python AI projects like Deepfake Detector.",
+            tools: ["Python", "Artificial Intelligence", "Machine Learning", "Computer Vision", "OpenCV", "SQL", "PostgreSQL", "Data Processing"]
         },
         {
             title: "3D & FRONTEND",
             description: "Interactive 3D graphics & smooth web UI animations",
             details: "Specializing in WebGL canvas experiences, Three.js 3D model rendering, GSAP timeline animations, and glassmorphism design systems.",
             tools: ["Three.js", "React Three Fiber", "GSAP", "WebGL", "Lenis Scroll", "HTML5", "CSS3", "Figma", "Responsive Design"]
-        },
-        {
-            title: "SOFTWARE & AUTOMATION",
-            description: "Workflow automation, desktop software & system scripting",
-            details: "Engineered solutions in C#, Python, and .NET. Eliminating repetitive tasks, automating workflows, and building robust backend & desktop tools.",
-            tools: ["C#", ".NET", "Python", "Automation", "PyAutoGUI", "Scripting", "System Tools", "CI/CD"]
-        },
-        {
-            title: "AI & INTELLIGENT SYSTEMS",
-            description: "Smart AI agents, chatbots, and NLP models",
-            details: "Building intelligent conversational agents, prompt engineering, integrating LLM APIs, and machine learning models into web applications.",
-            tools: ["AI Agents", "Python", "OpenAI API", "NLP", "LLMs", "FastAPI", "TensorFlow", "PyTorch"]
-        },
-        {
-            title: "DATA & SQL",
-            description: "Database design, SQL queries & data engineering",
-            details: "Architecting relational & NoSQL databases, optimizing complex SQL queries, managing data pipelines, and structuring application state.",
-            tools: ["SQL", "PostgreSQL", "MySQL", "MongoDB", "Database Architecture", "Data Modeling", "ORM"]
         }
     ]
 };

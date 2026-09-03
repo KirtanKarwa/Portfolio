@@ -75,6 +75,29 @@
   text-align: right;
 }
 
+.work-type-badge {
+  display: inline-block;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 3px 8px;
+  border-radius: 12px;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.work-type-badge.prof-badge {
+  background: rgba(196, 129, 255, 0.15);
+  color: #c481ff;
+  border: 1px solid rgba(196, 129, 255, 0.3);
+}
+
+.work-type-badge.os-badge {
+  background: rgba(255, 255, 255, 0.08);
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
 .work-title h3 {
   font-size: 50px;
   line-height: 50px;

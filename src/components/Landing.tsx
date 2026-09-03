@@ -4,10 +4,10 @@ import { config } from "../config";
 
 const professions = [
   "Software & Automation Engineer",
+  "Engineering, Web, Data & AI",
+  "Revit API & Excel VSTO Developer",
   "Full-Stack Web Developer",
-  "AI & Intelligent Systems Developer",
-  "C#, Python & .NET Specialist",
-  "SQL & Data Engineer"
+  "AI & Machine Learning Developer"
 ];
 
 const Landing = ({ children }: PropsWithChildren) => {

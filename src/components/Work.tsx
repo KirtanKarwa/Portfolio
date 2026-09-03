@@ -77,8 +77,11 @@ const Work = () => {
                   <h3>0{index + 1}</h3>
 
                   <div>
+                    <span className={`work-type-badge ${project.type === "Professional Work" ? "prof-badge" : "os-badge"}`}>
+                      {project.type}
+                    </span>
                     <h4>{project.title}</h4>
-                    <p>{project.category}</p>
+                    <p>{project.subtitle || project.category}</p>
                   </div>
                 </div>
                 <h4>Tools and features</h4>

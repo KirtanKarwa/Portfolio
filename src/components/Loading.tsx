@@ -4,6 +4,17 @@ import { useLoading } from "../context/LoadingProvider";
 import { config } from "../config";
 import Marquee from "react-fast-marquee";
 
+export const setProgress = (setLoading: (val: number) => void) => {
+  return {
+    clear: () => setLoading(100),
+    loaded: async () => {
+      setLoading(100);
+      return 100;
+    },
+    percent: 100,
+  };
+};
+
 const Loading = ({ percent }: { percent: number }) => {
   const { setIsLoading } = useLoading();
   const [loaded, setLoaded] = useState(false);

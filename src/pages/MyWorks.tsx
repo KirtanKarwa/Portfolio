@@ -25,8 +25,11 @@ const MyWorks = () => {
                 <img src={project.image} alt={project.title} loading="lazy" decoding="async" />
               </div>
               <div className="myworks-card-info">
+                <span className={`work-type-badge ${project.type === "Professional Work" ? "prof-badge" : "os-badge"}`}>
+                  {project.type}
+                </span>
                 <h3>{project.title}</h3>
-                <p className="myworks-card-category">{project.category}</p>
+                <p className="myworks-card-category">{project.subtitle || project.category}</p>
                 <p className="myworks-card-description">{project.description}</p>
                 <p className="myworks-card-tech">{project.technologies}</p>
               </div>
