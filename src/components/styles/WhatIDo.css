@@ -21,7 +21,8 @@
 }
 
 .what-box:first-child {
-  justify-content: center;
+  justify-content: flex-start;
+  padding-left: 10px;
 }
 
 .what-box:last-child {
@@ -32,7 +33,7 @@
   font-size: clamp(34px, 3.8vw, 54px);
   line-height: 1.1;
   font-weight: 700;
-  margin-right: 40px;
+  margin-right: 0;
   position: relative;
   z-index: 50;
 }
@@ -174,10 +175,22 @@
 .what-tags {
   font-size: 12px;
   font-weight: 400;
-  padding: 2px 8px;
-  background-color: rgba(255, 255, 255, 0.15);
-  border: 1px solid #ffffff50;
+  padding: 3px 10px;
+  background-color: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 30px;
+  color: rgba(255, 255, 255, 0.85);
+  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+  cursor: default;
+  user-select: none;
+}
+
+.what-tags:hover {
+  background-color: rgba(196, 129, 255, 0.25);
+  border-color: var(--accentColor, #c481ff);
+  color: #ffffff;
+  transform: translateY(-2px) scale(1.06);
+  box-shadow: 0 4px 14px rgba(196, 129, 255, 0.35);
 }
 
 .what-content::before,
