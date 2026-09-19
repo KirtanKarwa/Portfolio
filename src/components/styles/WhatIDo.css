@@ -1,12 +1,12 @@
 .whatIDO {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   position: relative;
   opacity: 1;
   height: 100vh;
-  width: var(--cWidth);
-  max-width: 1280px;
+  width: 92%;
+  max-width: 1400px;
   margin: 0 auto;
   box-sizing: border-box;
   z-index: 9;
@@ -22,7 +22,7 @@
 
 .what-box:first-child {
   justify-content: flex-start;
-  padding-left: 10px;
+  padding-left: 2%;
 }
 
 .what-box:last-child {
@@ -175,22 +175,10 @@
 .what-tags {
   font-size: 12px;
   font-weight: 400;
-  padding: 3px 10px;
-  background-color: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2px 8px;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1px solid #ffffff50;
   border-radius: 30px;
-  color: rgba(255, 255, 255, 0.85);
-  transition: all 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
-  cursor: default;
-  user-select: none;
-}
-
-.what-tags:hover {
-  background-color: rgba(196, 129, 255, 0.25);
-  border-color: var(--accentColor, #c481ff);
-  color: #ffffff;
-  transform: translateY(-2px) scale(1.06);
-  box-shadow: 0 4px 14px rgba(196, 129, 255, 0.35);
 }
 
 .what-content::before,
@@ -297,8 +285,11 @@
 
 /* Responsive Media Queries */
 @media screen and (max-width: 1280px) {
+  .what-box:first-child {
+    padding-left: 1%;
+  }
+
   .what-title {
-    margin-right: 20px;
     font-size: 34px;
   }
 
@@ -353,6 +344,7 @@
   .what-box:first-child,
   .what-box:last-child {
     justify-content: center;
+    padding-left: 0;
   }
 
   .what-box-in {
